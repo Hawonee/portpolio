@@ -33,6 +33,7 @@ html,
 body {
   height: 100%;
   line-height: 1;
+  scroll-behavior: smooth;
 }
 
 img,
@@ -82,8 +83,9 @@ html {
 }
 
 .wrapper {
-  max-width: 1600px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background: #fff;
 }
 
 ::-moz-selection {
@@ -108,9 +110,21 @@ footer ::selection {
 
 body {
   position: relative;
-  height: auto;
   padding-bottom: 80vh;
-  background: url(/assets/img/bg.png) #dbdbd1;
+  height: auto;
+  background-color: #DBDBD1;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://jeon-hyerin.github.io/landing/assets/images/bg/overlay.gif);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.12;
 }
 
 header .gnb {
@@ -118,7 +132,7 @@ header .gnb {
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 100;
 }
 header .gnb .gnb-list {
   display: flex;
@@ -204,7 +218,6 @@ header .gnb .gnb-list .gnb-item.on {
   z-index: 5;
   width: 400px;
   cursor: move;
-  opacity: 0;
 }
 .sc-about .sticker-box img:nth-child(1) {
   position: absolute;
@@ -245,7 +258,7 @@ header .gnb .gnb-list .gnb-item.on {
 
 .sc-works {
   position: relative;
-  overflow: hidden;
+  background: #0f0;
 }
 .sc-works .title {
   position: absolute;
@@ -260,12 +273,30 @@ header .gnb .gnb-list .gnb-item.on {
 }
 .sc-works .work-list {
   position: relative;
-  height: 100%;
   z-index: 2;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
 .sc-works .work-list .work-item {
+  position: sticky;
+  top: 0;
   padding: 80px 0 50px;
   border-bottom: 1px solid rgba(45, 68, 37, 0.2);
+  background: #fff;
+}
+.sc-works .work-list .work-item:first-child::before {
+  display: none;
+}
+.sc-works .work-list .work-item::before {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 212, 255, 0) 100%);
+  opacity: 0.05;
+  content: "";
 }
 .sc-works .work-list .work-item:hover {
   border-bottom: 1px solid #2D4425;
@@ -302,7 +333,9 @@ header .gnb .gnb-list .gnb-item.on {
 }
 
 footer {
+  position: fixed;
   height: 80vh;
+  bottom: 0;
   background: #2D4425;
   margin: 0 auto;
   color: #fff;
@@ -328,7 +361,6 @@ footer .contact-area .inner .flex-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
 footer .contact-area .inner .flex-box .box {
   border: 1px solid #DBDBD1;

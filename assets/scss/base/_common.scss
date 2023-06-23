@@ -8,9 +8,13 @@
 }
 
 .wrapper {
-  max-width: 1600px;
-  margin: 0 auto;
-  
+  // max-width: 1600px;
+  // margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  // margin-bottom: 100vh;
+
 }
 ::selection {
   background: $green;

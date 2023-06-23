@@ -1,8 +1,20 @@
 body {
   position: relative;
-  height: auto;
   padding-bottom: 80vh;
-  background: url(/assets/img/bg.png) rgba($color: $dft, $alpha: 1);
+  height: auto;
+  background-color: $dft;
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://jeon-hyerin.github.io/landing/assets/images/bg/overlay.gif);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.12;
+  }
 }
 // scss 바깥 경로 확인하기
 // rem, vw 뭐가 더 좋은지 확인하기
@@ -12,7 +24,7 @@ header {
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 100;
     .gnb-list {
       display: flex;
       justify-content: space-around;
@@ -38,6 +50,8 @@ header {
   }
 }
 
+main {
+}
 .sc-main {
   height: 100vh;
   position: relative;
@@ -99,7 +113,7 @@ header {
       z-index: 5;
       width: 400px;
       cursor: move;
-      opacity: 0;
+      // opacity: 0;
       &:nth-child(1) {
         position: absolute;
         top: 60%;
@@ -141,8 +155,11 @@ header {
 }
 
 .sc-works {
+  // height: 100vh;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
+  // padding-bottom: 100vh;
+  background: #0f0;
   .title {
     position: absolute;
     top: 50%;
@@ -156,13 +173,33 @@ header {
   }
   .work-list {
     position: relative;
-    height: 100%;
+    // height: 100%;
     z-index: 2;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
     // backdrop-filter: blur(16px);
     // background: url(/assets/img/bg.png) rgba($color: $dft);
     .work-item {
+      position: sticky;
+      top: 0;
       padding: 80px 0 50px;
       border-bottom: 1px solid rgba($color: $green, $alpha: 0.2);
+      background: #fff;
+      &:first-child {
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 212, 255, 0) 100%);
+        opacity: 0.05;
+        content: "";
+      }
       &:hover {
         border-bottom: 1px solid $green;
       }
@@ -203,7 +240,9 @@ header {
 }
 
 footer {
+  position: fixed;
   height: 80vh;
+  bottom: 0;
   background: $green;
   margin: 0 auto;
   color: #fff;
@@ -228,7 +267,6 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 1;
         .box {
           border: 1px solid $dft;
           box-sizing: border-box;
