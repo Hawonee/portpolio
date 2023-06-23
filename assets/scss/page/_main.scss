@@ -2,18 +2,18 @@ body {
   position: relative;
   padding-bottom: 80vh;
   height: auto;
-  background-color: $dft;
+  background: $dft;
   &::after {
-    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: url(https://jeon-hyerin.github.io/landing/assets/images/bg/overlay.gif);
+    content: "";
     z-index: 10;
     pointer-events: none;
-    opacity: 0.12;
+    opacity: 0.08;
   }
 }
 // scss 바깥 경로 확인하기
@@ -24,7 +24,7 @@ header {
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
+    z-index: 10;
     .gnb-list {
       display: flex;
       justify-content: space-around;
@@ -39,10 +39,12 @@ header {
         font-weight: 300;
         font-family: "Prompt", "Pretendard", sans-serif;
         padding: 0 20px;
+        transition: all .2s linear;
         &.on {
           background: $dft;
           color: $green;
           border-radius: 50px;
+          font-weight: 400;
           padding: 14px 20px;
         }
       }
@@ -50,8 +52,7 @@ header {
   }
 }
 
-main {
-}
+
 .sc-main {
   height: 100vh;
   position: relative;
@@ -93,73 +94,73 @@ main {
       bottom: 30rem;
     }
   }
-}
-
-.sc-about {
-  height: 100vh;
-  position: relative;
-  .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20rem;
-    white-space: nowrap;
-    letter-spacing: -1rem;
-    opacity: 0.8;
-  }
   .sticker-box {
     img {
       z-index: 5;
       width: 400px;
       cursor: move;
-      // opacity: 0;
+      opacity: 0;
       &:nth-child(1) {
         position: absolute;
-        top: 60%;
+        top: 44%;
         left: 50%;
       }
       &:nth-child(2) {
         position: absolute;
-        bottom: 20%;
+        bottom: 8%;
         left: 10%;
       }
       &:nth-child(3) {
         position: absolute;
-        top: 25%;
-        left: 10%;
+        top: 16%;
+        left: 0;
       }
       &:nth-child(4) {
         position: absolute;
-        top: 60%;
+        bottom: 0;
         left: 74%;
       }
       &:nth-child(5) {
         position: absolute;
-        top: 15%;
-        left: 30%;
+        top: 4%;
+        left: 40%;
       }
       &:nth-child(6) {
         position: absolute;
         width: 300px;
-        bottom: 20%;
-        left: 40%;
+        bottom: 0%;
+        left: 32%;
       }
       &:nth-child(7) {
         position: absolute;
-        top: 24%;
+        top: 14%;
         left: 70%;
       }
     }
   }
 }
 
+// .sc-about {
+//   height: 100vh;
+//   position: relative;
+//   .title {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     font-size: 20rem;
+//     white-space: nowrap;
+//     letter-spacing: -1rem;
+//     opacity: 0.8;
+//   }
+
+// }
+
 .sc-works {
   // height: 100vh;
   position: relative;
   // overflow: hidden;
   // padding-bottom: 100vh;
-  background: #0f0;
   .title {
     position: absolute;
     top: 50%;
@@ -170,6 +171,7 @@ main {
     letter-spacing: -1rem;
     opacity: 0.8;
     z-index: 1;
+    height: 100vh;
   }
   .work-list {
     position: relative;
@@ -184,11 +186,14 @@ main {
       top: 0;
       padding: 80px 0 50px;
       border-bottom: 1px solid rgba($color: $green, $alpha: 0.2);
-      background: #fff;
+      background: $dft;
       &:first-child {
         &::before {
           display: none;
         }
+      }
+      &:last-child:hover {
+        border-bottom: 0;
       }
       &::before {
         position: absolute;
@@ -241,24 +246,25 @@ main {
 
 footer {
   position: fixed;
-  height: 80vh;
+  width: 100%;
+  height: 100vh;
   bottom: 0;
   background: $green;
   margin: 0 auto;
   color: #fff;
   overflow: hidden;
-  padding-top: 30vh;
+  padding-top: 50vh;
   .contact-area {
     .contact-tit {
       display: flex;
       justify-content: center;
       color: rgba($color: $dft, $alpha: 1);
-      font-size: 9.8vw;
+      font-size: 9.6vw;
       white-space: nowrap;
       letter-spacing: -0.6vw;
       font-weight: 500;
     }
-    .inner {
+    .f-inner {
       display: block;
       margin: 0 auto;
       text-align: center;
@@ -268,6 +274,7 @@ footer {
         justify-content: center;
         align-items: center;
         .box {
+          flex: 1;
           border: 1px solid $dft;
           box-sizing: border-box;
           transition: 0.3s ease-in-out;
@@ -292,7 +299,7 @@ footer {
       display: flex;
       justify-content: space-between;
       line-height: 6rem;
-      font-size: 1.8rem;
+      font-size: 2.6rem;
     }
   }
 }
