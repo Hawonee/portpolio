@@ -1,14 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".sticker-box img", {
-  
+  stagger: {
+    from: "random",
+    amount: 0.3,
+  },
+  opacity: 1,
+  scale: 0.8,
 });
-
-// const fadeinEls = document.querySelectorAll(".sticker-box img");
-
-// fadeinEls.forEach(function (textanimation, index) {
-//   gsap.to(textanimation, {
-//     delay: (index + 1) * 0.3,
-//     opacity: 1,
-//   });
-// });
