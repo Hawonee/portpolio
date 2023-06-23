@@ -12,9 +12,14 @@
   // margin: 0 auto;
   position: relative;
   z-index: 1;
-  background: #fff;
-  // margin-bottom: 100vh;
-
+  background: $dft;
+  // margin-bottom: 100vh;\
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.inner{
+  max-width: 1600px;
+  margin: 0 auto;
 }
 ::selection {
   background: $green;

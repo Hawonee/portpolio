@@ -1,14 +1,26 @@
 $(function () {//시작
   
-  $('.sticker-box img').draggable();
+  $( document ).ready(function() {
+    $('.sticker-box img').draggable();        
+});
 
-  // const imgIdx = 10;
-  // $(".sticker-box img").draggable().css("cursor", "move").mousedown(function () {
-  //     // mousedown 이벤트 생성
-  //     $(this).css("z-index", imgIdx); // 클릭한 이미지만 z-index 증가시킴
-  //     imgIdx++;
-  //     // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
-  //   });
+
+    $(window).on('scroll', function() {
+      let currentPosition = $(this).scrollTop();
+      // 섹션 위치값 비교
+
+      $('section').each(function() {
+        let top = $(this).offset().top - 150; // 
+        let bottom = top + $(this).outerHeight();
+  
+        if (currentPosition >= top && currentPosition <= bottom) {
+          let sectionId = $(this).attr('id');
+          $('.gnb-item').removeClass('on');
+          $('.gnb-item').find('a[href="#' + sectionId + '"]').parent().addClass('on');
+        }
+      });
+    });
+
 
 }); //끝 지우지 말 것
 
@@ -29,3 +41,5 @@ function getTime() {
 }
 getTime();
 setInterval(getTime, 1000);
+
+

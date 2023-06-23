@@ -85,7 +85,14 @@ html {
 .wrapper {
   position: relative;
   z-index: 1;
-  background: #fff;
+  background: #DBDBD1;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 ::-moz-selection {
@@ -112,19 +119,19 @@ body {
   position: relative;
   padding-bottom: 80vh;
   height: auto;
-  background-color: #DBDBD1;
+  background: #DBDBD1;
 }
 body::after {
-  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: url(https://jeon-hyerin.github.io/landing/assets/images/bg/overlay.gif);
+  content: "";
   z-index: 10;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 header .gnb {
@@ -132,7 +139,7 @@ header .gnb {
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 10;
 }
 header .gnb .gnb-list {
   display: flex;
@@ -149,11 +156,13 @@ header .gnb .gnb-list .gnb-item {
   font-weight: 300;
   font-family: "Prompt", "Pretendard", sans-serif;
   padding: 0 20px;
+  transition: all 0.2s linear;
 }
 header .gnb .gnb-list .gnb-item.on {
   background: #DBDBD1;
   color: #2D4425;
   border-radius: 50px;
+  font-weight: 400;
   padding: 14px 20px;
 }
 
@@ -199,66 +208,51 @@ header .gnb .gnb-list .gnb-item.on {
   right: 28rem;
   bottom: 30rem;
 }
-
-.sc-about {
-  height: 100vh;
-  position: relative;
-}
-.sc-about .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20rem;
-  white-space: nowrap;
-  letter-spacing: -1rem;
-  opacity: 0.8;
-}
-.sc-about .sticker-box img {
+.sc-main .sticker-box img {
   z-index: 5;
   width: 400px;
   cursor: move;
+  opacity: 0;
 }
-.sc-about .sticker-box img:nth-child(1) {
+.sc-main .sticker-box img:nth-child(1) {
   position: absolute;
-  top: 60%;
+  top: 44%;
   left: 50%;
 }
-.sc-about .sticker-box img:nth-child(2) {
+.sc-main .sticker-box img:nth-child(2) {
   position: absolute;
-  bottom: 20%;
+  bottom: 8%;
   left: 10%;
 }
-.sc-about .sticker-box img:nth-child(3) {
+.sc-main .sticker-box img:nth-child(3) {
   position: absolute;
-  top: 25%;
-  left: 10%;
+  top: 16%;
+  left: 0;
 }
-.sc-about .sticker-box img:nth-child(4) {
+.sc-main .sticker-box img:nth-child(4) {
   position: absolute;
-  top: 60%;
+  bottom: 0;
   left: 74%;
 }
-.sc-about .sticker-box img:nth-child(5) {
+.sc-main .sticker-box img:nth-child(5) {
   position: absolute;
-  top: 15%;
-  left: 30%;
-}
-.sc-about .sticker-box img:nth-child(6) {
-  position: absolute;
-  width: 300px;
-  bottom: 20%;
+  top: 4%;
   left: 40%;
 }
-.sc-about .sticker-box img:nth-child(7) {
+.sc-main .sticker-box img:nth-child(6) {
   position: absolute;
-  top: 24%;
+  width: 300px;
+  bottom: 0%;
+  left: 32%;
+}
+.sc-main .sticker-box img:nth-child(7) {
+  position: absolute;
+  top: 14%;
   left: 70%;
 }
 
 .sc-works {
   position: relative;
-  background: #0f0;
 }
 .sc-works .title {
   position: absolute;
@@ -270,6 +264,7 @@ header .gnb .gnb-list .gnb-item.on {
   letter-spacing: -1rem;
   opacity: 0.8;
   z-index: 1;
+  height: 100vh;
 }
 .sc-works .work-list {
   position: relative;
@@ -283,10 +278,13 @@ header .gnb .gnb-list .gnb-item.on {
   top: 0;
   padding: 80px 0 50px;
   border-bottom: 1px solid rgba(45, 68, 37, 0.2);
-  background: #fff;
+  background: #DBDBD1;
 }
 .sc-works .work-list .work-item:first-child::before {
   display: none;
+}
+.sc-works .work-list .work-item:last-child:hover {
+  border-bottom: 0;
 }
 .sc-works .work-list .work-item::before {
   position: absolute;
@@ -334,48 +332,50 @@ header .gnb .gnb-list .gnb-item.on {
 
 footer {
   position: fixed;
-  height: 80vh;
+  width: 100%;
+  height: 100vh;
   bottom: 0;
   background: #2D4425;
   margin: 0 auto;
   color: #fff;
   overflow: hidden;
-  padding-top: 30vh;
+  padding-top: 50vh;
 }
 footer .contact-area .contact-tit {
   display: flex;
   justify-content: center;
   color: #dbdbd1;
-  font-size: 9.8vw;
+  font-size: 9.6vw;
   white-space: nowrap;
   letter-spacing: -0.6vw;
   font-weight: 500;
 }
-footer .contact-area .inner {
+footer .contact-area .f-inner {
   display: block;
   margin: 0 auto;
   text-align: center;
   max-width: 1600px;
 }
-footer .contact-area .inner .flex-box {
+footer .contact-area .f-inner .flex-box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-footer .contact-area .inner .flex-box .box {
+footer .contact-area .f-inner .flex-box .box {
+  flex: 1;
   border: 1px solid #DBDBD1;
   box-sizing: border-box;
   transition: 0.3s ease-in-out;
   height: 24vh;
 }
-footer .contact-area .inner .flex-box .box:hover {
+footer .contact-area .f-inner .flex-box .box:hover {
   background: #DBDBD1;
   transition: 0.3s ease-in-out;
 }
-footer .contact-area .inner .flex-box .box:hover svg {
+footer .contact-area .f-inner .flex-box .box:hover svg {
   fill: #2D4425;
 }
-footer .contact-area .inner .flex-box .box svg {
+footer .contact-area .f-inner .flex-box .box svg {
   display: block;
   margin: 0 auto;
   height: 100%;
@@ -385,5 +385,5 @@ footer .contact-area .deco-area {
   display: flex;
   justify-content: space-between;
   line-height: 6rem;
-  font-size: 1.8rem;
+  font-size: 2.6rem;
 }
