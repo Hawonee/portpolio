@@ -1,0 +1,11 @@
+//공통 적용 스타일 (변수 파일 제일 먼저 가지고 오기)
+@import "./utils/var";
+// @import "./utils/mixins";
+
+//기본 세팅: 폰트, 리셋, 공통
+@import "./base/font";
+@import "./base/reset";
+@import "./base/common";
+
+//전체 페이지
+@import "./page/main";
