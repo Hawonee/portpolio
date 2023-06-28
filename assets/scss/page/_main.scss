@@ -24,7 +24,7 @@ header {
     top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 20;
     .gnb-list {
       display: flex;
       justify-content: space-around;
@@ -39,7 +39,7 @@ header {
         font-weight: 300;
         font-family: "Prompt", "Pretendard", sans-serif;
         padding: 0 20px;
-        transition: all .2s linear;
+        transition: all 0.2s linear;
         &.on {
           background: $dft;
           color: $green;
@@ -51,7 +51,6 @@ header {
     }
   }
 }
-
 
 .sc-main {
   height: 100vh;
@@ -104,6 +103,7 @@ header {
         position: absolute;
         top: 44%;
         left: 50%;
+        width: 360px;
       }
       &:nth-child(2) {
         position: absolute;
@@ -113,7 +113,7 @@ header {
       &:nth-child(3) {
         position: absolute;
         top: 16%;
-        left: 0;
+        left: 20%;
       }
       &:nth-child(4) {
         position: absolute;
@@ -136,49 +136,56 @@ header {
         top: 14%;
         left: 70%;
       }
+      &:nth-child(8) {
+        position: absolute;
+        top: -8%;
+        left: 8%;
+      }
+      &:nth-child(9) {
+        position: absolute;
+        top: 5%;
+        left: 70%;
+      }
+      &:nth-child(10) {
+        position: absolute;
+        top: 30%;
+        width: 240px;
+      }
     }
   }
 }
-
-// .sc-about {
-//   height: 100vh;
-//   position: relative;
-//   .title {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-size: 20rem;
-//     white-space: nowrap;
-//     letter-spacing: -1rem;
-//     opacity: 0.8;
-//   }
-
-// }
 
 .sc-works {
   // height: 100vh;
   position: relative;
   // overflow: hidden;
   // padding-bottom: 100vh;
-  .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20rem;
-    white-space: nowrap;
-    letter-spacing: -1rem;
-    opacity: 0.8;
-    z-index: 1;
-    height: 100vh;
+  // .title {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   font-size: 20rem;
+  //   white-space: nowrap;
+  //   letter-spacing: -1rem;
+  //   opacity: 0.8;
+  //   z-index: 1;
+  //   height: 100vh;
+  // }
+  .work-year {
+    position: relative;
+    font-size: 10rem;
+    padding-top: 200px;
+    font-family: "prompt", serif;
+    font-weight: 600;
+    opacity: 0.5;
+    letter-spacing: -0.5rem;
   }
   .work-list {
     position: relative;
     // height: 100%;
     z-index: 2;
     background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
     // backdrop-filter: blur(16px);
     // background: url(/assets/img/bg.png) rgba($color: $dft);
     .work-item {
@@ -192,10 +199,8 @@ header {
           display: none;
         }
       }
-      &:last-child:hover {
-        border-bottom: 0;
-      }
-      &::before {
+      &::before,
+      &.first::before {
         position: absolute;
         bottom: 100%;
         left: 0;
@@ -204,9 +209,6 @@ header {
         background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 212, 255, 0) 100%);
         opacity: 0.05;
         content: "";
-      }
-      &:hover {
-        border-bottom: 1px solid $green;
       }
       .link-work {
         .badge {
@@ -217,7 +219,6 @@ header {
           background: (rgba($color: $green, $alpha: 0.4));
           font-weight: 300;
           padding: 5px 10px;
-          border-radius: 5px;
         }
         .flex {
           display: flex;
@@ -239,6 +240,20 @@ header {
             }
           }
         }
+      }
+      .line {
+        width: 100%;
+      }
+      &:hover .line {
+        position: absolute;
+        height: 1px;
+        background: $green;
+        bottom: 0;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      &.last:hover .line {
+        display: none;
       }
     }
   }
@@ -296,6 +311,7 @@ footer {
       }
     }
     .deco-area {
+      position: relative;
       display: flex;
       justify-content: space-between;
       line-height: 6rem;
@@ -303,3 +319,19 @@ footer {
     }
   }
 }
+
+@include tablet{
+  /*브라우저 사이즈768px이상, 1023px 이하일때*/
+  .gnb-list{
+    background: blue;
+  }
+}
+
+
+@include mobile{ 
+  /*브라우저 사이즈767px이하일때*/
+  .gnb-list{
+    background: red;
+  }
+}
+
