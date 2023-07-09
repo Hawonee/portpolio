@@ -544,8 +544,8 @@ header .gnb .gnb-list .gnb-item.on {
 }
 .sc-works .work-list {
   position: relative;
+  padding: 0 4rem;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.1);
 }
 .sc-works .work-list .work-item {
   position: sticky;
@@ -595,6 +595,19 @@ header .gnb .gnb-list .gnb-item.on {
   border: 2px solid #2D4425;
   border-radius: 50px;
   padding: 0 20px;
+}
+.sc-works .work-list .work-item .link-code {
+  display: block;
+  padding-left: 1rem;
+  font-size: 2.4rem;
+  color: #DBDBD1;
+  letter-spacing: -0.08rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #2D4425;
+}
+.sc-works .work-list .work-item .link-code.hover {
+  display: block;
+  text-decoration-line: underline;
 }
 .sc-works .work-list .work-item .line {
   width: 100%;
@@ -804,12 +817,14 @@ footer .contact-area .deco-area {
   }
   .sc-works {
     position: relative;
+  }
+  .sc-works .work-list {
+    background: #DBDBD1;
     padding: 0 2rem;
   }
   .sc-works .work-list .work-item {
     padding: 8rem 0 3rem;
     border-bottom: 1px solid rgba(45, 68, 37, 0.2);
-    background: #DBDBD1;
   }
   .sc-works .work-list .work-item .link-work .flex {
     display: flex;
@@ -834,6 +849,15 @@ footer .contact-area .deco-area {
     border: 2px solid #2D4425;
     border-radius: 50px;
     padding: 0 1.8rem;
+  }
+  .sc-works .work-list .work-item .link-work .link-code {
+    display: block;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    color: #DBDBD1;
+    letter-spacing: -0.04rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2D4425;
   }
   .sc-works .work-list .work-item .link-work .line {
     width: 100%;
@@ -1021,6 +1045,8 @@ footer .contact-area .deco-area {
   }
   .sc-works {
     position: relative;
+  }
+  .sc-works .work-list {
     padding: 0 2rem;
   }
   .sc-works .work-list .work-item {
@@ -1072,6 +1098,15 @@ footer .contact-area .deco-area {
   }
   .sc-works .work-list .work-item .link-work.last:hover .line {
     display: none;
+  }
+  .sc-works .work-list .work-item .link-code {
+    display: block;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    color: #DBDBD1;
+    letter-spacing: -0.1rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2D4425;
   }
   footer {
     background: #2D4425;

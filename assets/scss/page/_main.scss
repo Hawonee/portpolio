@@ -170,9 +170,9 @@ header {
   }
   .work-list {
     position: relative;
+    padding: 0 4rem;
     // height: 100%;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.1);
     // backdrop-filter: blur(16px);
     // background: url(/assets/img/bg.png) rgba($color: $dft);
     .work-item {
@@ -226,6 +226,19 @@ header {
               padding: 0 20px;
             }
           }
+        }
+      }
+      .link-code{
+        display: block;
+        padding-left: 1rem;
+        font-size: 2.4rem;
+        color: $dft;
+        letter-spacing: -.08rem;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $green;
+        &.hover{
+          display: block;
+          text-decoration-line: underline;
         }
       }
       .line {
@@ -446,12 +459,12 @@ footer {
 
   .sc-works {
     position: relative;
-    padding: 0 2rem;
     .work-list {
+      background: $dft;
+      padding: 0 2rem;
       .work-item {
         padding: 8rem 0 3rem;
         border-bottom: 1px solid rgba($color: $green, $alpha: 0.2);
-        background: $dft;
         .link-work {
           .flex {
             display: flex;
@@ -476,6 +489,15 @@ footer {
                 padding: 0 1.8rem;
               }
             }
+          }
+          .link-code{
+            display: block;
+            padding-left: 1rem;
+            font-size: 1.8rem;
+            color: $dft;
+            letter-spacing: -.04rem;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $green;
           }
           .line {
             width: 100%;
@@ -678,8 +700,8 @@ footer {
 
   .sc-works {
     position: relative;
-    padding: 0 2rem;
     .work-list {
+      padding: 0 2rem;
       .work-item {
         padding: 5rem 0 2rem;
         border-bottom: 1px solid rgba($color: $green, $alpha: 0.2);
@@ -730,6 +752,15 @@ footer {
           &.last:hover .line {
             display: none;
           }
+        }
+        .link-code{
+          display: block;
+          padding-left: 1rem;
+          font-size: 1.8rem;
+          color: $dft;
+          letter-spacing: -.1rem;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: $green;
         }
       }
     }

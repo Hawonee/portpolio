@@ -22,47 +22,29 @@ $(function () {//시작
     });
 
 
-    // $(window).scroll(function() {
-    //   var lastLiOffsetTop = lastLi.offset().top;
-    //   var scrollTop = $(window).scrollTop();
-  
-    //   if (scrollTop >= lastLiOffsetTop) {
-    //     gnbLi.removeClass('on');
-    //     gnbLastLi.addClass('on');
-    //   } else {
-    //     gnbLastLi.removeClass('on');
-    //     gnbLi.each(function(index) {
-    //       if ($(this).offset().top <= scrollTop) {
-    //         $(this).addClass('on');
+    // $(window).on('scroll', function() {
+    //   let currentPosition = $(this).scrollTop();
+    //   let sectionLastLi = $('.work-list li:last-child');
+    //   let gnbLastLi = $('.gnb li:last-child');
+    //   let gnbLi = $('.gnb li');
+    
+    //   $('.sc-work').each(function() {
+    //     let sectionTop = $(this).offset().top;
+    //     let sectionBottom = sectionTop + $(this).outerHeight();
+    //     let lastLiOffsetTop = sectionLastLi.offset().top;
+    
+    //     if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
+    //       if (currentPosition >= lastLiOffsetTop) {
+    //         gnbLastLi.addClass('on');
+    //         gnbLi.not(gnbLastLi).removeClass('on');
     //       } else {
-    //         return false; // 종료하여 이후 요소는 확인하지 않음
+    //         gnbLastLi.removeClass('on');
+    //         gnbLi.removeClass('on');
     //       }
-    //     });
-    //   }
+    //     }
+        
+    //   });
     // });
-
-    $(window).on('scroll', function() {
-      let currentPosition = $(this).scrollTop();
-      let sectionLastLi = $('.work-list li:last-child');
-      let gnbLastLi = $('.gnb li:last-child');
-      let gnbLi = $('.gnb li');
-    
-      $('.sc-work').each(function() {
-        let sectionTop = $(this).offset().top;
-        let sectionBottom = sectionTop + $(this).outerHeight();
-        let lastLiOffsetTop = sectionLastLi.offset().top;
-    
-        if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
-          if (currentPosition >= lastLiOffsetTop) {
-            gnbLastLi.addClass('on');
-            gnbLi.not(gnbLastLi).removeClass('on');
-          } else {
-            gnbLastLi.removeClass('on');
-            gnbLi.removeClass('on');
-          }
-        }
-      });
-    });
 
 }); //끝 지우지 말 것
 
