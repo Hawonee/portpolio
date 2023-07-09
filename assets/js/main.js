@@ -22,6 +22,20 @@ $(function () {//시작
     });
 
 
+    $(document).ready(function() {
+      $('.gnb li:last-child').click(function() {
+        // Remove 'on' class from other li elements
+        $('.gnb li').not(this).removeClass('on');
+        
+        // Toggle 'on' class for the clicked li element
+        $(this).toggleClass('on');
+        
+        $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
+        return false;
+      });
+    });
+
+
     // $(window).on('scroll', function() {
     //   let currentPosition = $(this).scrollTop();
     //   let sectionLastLi = $('.work-list li:last-child');
